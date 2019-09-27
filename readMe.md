@@ -39,4 +39,6 @@ How To Test:
 	cd front-end
 3. Enter npm run test again to test the front end
 
-Link to deployed app
+Link to deployed app:
+
+https://damp-ocean-14822.herokuapp.com/#/
