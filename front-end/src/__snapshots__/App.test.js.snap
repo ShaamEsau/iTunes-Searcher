@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SnapShot 1`] = `
+<div
+  className="App"
+>
+  <input
+    onChange={[Function]}
+    type="text"
+  />
+  <button
+    onClick={[Function]}
+  >
+    Submit
+  </button>
+  <br />
+  <label>
+    Song
+  </label>
+  <input
+    name="category"
+    onClick={[Function]}
+    type="radio"
+    value="musicTrack"
+  />
+  <label>
+    Book
+  </label>
+  <input
+    name="category"
+    onClick={[Function]}
+    type="radio"
+    value="ebook"
+  />
+  <label>
+    Audio Book
+  </label>
+  <input
+    name="category"
+    onClick={[Function]}
+    type="radio"
+    value="audiobook"
+  />
+  <table />
+</div>
+`;

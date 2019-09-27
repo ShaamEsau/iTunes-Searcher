@@ -123,7 +123,9 @@ class Search extends React.Component {
                         {/* Creates a table data that contains the states image value in an image element */}
                         <td><img src={data.artworkUrl60}/></td>
                         <td>{data.trackName}</td>
-                        <td> <audio controls><source src={data.previewUrl} type="audio/mpeg"/></audio> </td>
+                        {/* Sets an audio control that holds the sample data if any be be played, paused or downloaded */}
+                        <td> <audio controls><source src={data.previewUrl} type="audio/mpeg"/></audio></td>
+                        {/* Creates a button that when clicked extecutes the function with the data held by it */}
                         <td><button onClick={() => {this.addFav(data)}}>🌟</button></td>
                         </tr>
                         </tbody>
