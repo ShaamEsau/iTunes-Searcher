@@ -1,6 +1,6 @@
 /* Calls the React and Router library to be used */
 import React from 'react';
-import { BrowserRouter, Route, NavLink, Switch } from "react-router-dom";
+import { HashRouter, Route, NavLink, Switch } from "react-router-dom";
 /* Calls stylesheet to edit and style the elements rendered */
 import './App.css';
 /* Calls image to be used on this page */
@@ -21,7 +21,7 @@ class App extends React.Component {
             <img id="Logo" src={iTunes}/>
             <br/>
         {/* Placeholder for the component links */}
-        <BrowserRouter>
+        <HashRouter>
         <div>
     {/* Creates an unordered list */}
     <ul>
@@ -38,7 +38,7 @@ class App extends React.Component {
 <Route path = {"/Favourite"} component = {Favourite} />
 </Switch>
 </div>
-</BrowserRouter>
+</HashRouter>
 </div>
         );
     }

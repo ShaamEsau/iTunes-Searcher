@@ -20,6 +20,9 @@ class Search extends React.Component {
 
     /*Adds a life cycle that executes as the page is loaded*/
     componentDidMount = async () => {
+        this.setState({
+            itunesData: []
+        })
         /* Creates a variable that retrieves data from the api */
         var rawData = await fetch("/api")
         /* Creates a variable that parses info as json */
@@ -50,7 +53,7 @@ class Search extends React.Component {
             body: JSON.stringify(searchInput)
         })
         /* Reloads page */
-        document.location.reload();
+        window.location.reload();
 
     }
 
@@ -98,6 +101,8 @@ class Search extends React.Component {
             <input type="radio" name="category" value="musicTrack" onClick={e => this.setState({trackOrBook : e.target.value})}/>
             <label>Book</label>
             <input type="radio" name="category" value="ebook" onClick={e => this.setState({trackOrBook : e.target.value})}/>
+            <label>Audio Book</label>
+            <input type="radio" name="category" value="audiobook" onClick={e => this.setState({trackOrBook : e.target.value})}/>
             {/* Creates a table to contain data */}
             <table>
                 {/* Takes the states array and executed the elements contained within per index */}

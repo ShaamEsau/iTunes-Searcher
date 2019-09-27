@@ -35,7 +35,8 @@ class Favourites extends React.Component {
       /* Converts data to JSON and saves it to the body-parser */
       body: JSON.stringify(itemSelector)
     })
-    document.location.reload();
+      /* Reloads page */
+      window.location.reload(true);
   }
 
 	render(){
