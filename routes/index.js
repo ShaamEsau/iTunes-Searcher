@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const helmet = require("helmet");
 const fetch = require("node-fetch");
 /* Calls custom json file to use it's data */
-var favs = require("../favourites.json")
+var favs = require(__dirname + "/favourites.json")
 /* Executes values passed, parsed as json */
 app.use(bodyParser.json())
 app.use(express.json())
@@ -35,7 +35,7 @@ router.post("/favs", (req, res) => {
 	/* Pushes the bodies stored data to the array in the json file */   
 	favs.push(req.body)
 	/* Writes data requested to the specified JSON file and converts data to a readable format for the file */
-	fs.writeFile("../favourites.json", JSON.stringify(favs), (err) => {
+	fs.writeFile(__dirname + "/favourites.json", JSON.stringify(favs), (err) => {
 		/* If an error occurs, outputs the console string */
 		if(err){
 			console.log("Could not add to favourites");
@@ -50,7 +50,7 @@ router.post("/favs", (req, res) => {
 /* Makes a GET request to retrieve data */
 router.get("/favs", (req, res) => {
 	/* Reads data stored in the file */
-	fs.readFile("../favourites.json", (err, data) => {
+	fs.readFile(__dirname + "/favourites.json", (err, data) => {
 		/* If an error occurs, responds with the string value */
         if (err) {
             res.send("File Not Found");
@@ -69,7 +69,7 @@ router.delete("/favs", (req, res) => {
         return id.trackID != req.body.id;
     });
     /* Writes data requested to the specified JSON file and converts data to a readable format for the file */
-    fs.writeFile("../favourites.json", JSON.stringify(favs), (err) => {
+    fs.writeFile(__dirname + "/favourites.json", JSON.stringify(favs), (err) => {
         /* If an error occurs, responds with this string value */
         if (err) {
          console.log("Could not remove file")
