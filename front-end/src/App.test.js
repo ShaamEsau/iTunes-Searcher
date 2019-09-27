@@ -14,9 +14,3 @@ it('SnapShot', () => {
 	/* Checks is the rendered component matches the snapshot */
 	expect(tree).toMatchSnapshot();
 });
-
-
-it("Check if textbox value changes", () => {
-	const mockFn = jest.fn();
-
-})
